@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		
+		// Задание 1
+		let udh = {
+		}
+		let number = prompt("Введите число от 1 до 999 (Результат смотри в консоли");
+		
+		function numToObj (num, obj) {
+			if (num > 0 && num < 999)  {
+				numSeparation (num, obj);
+				console.log("Единицы: " + obj.units + " Десятки: " + obj.dozens + " Сотни: " + obj.hundreds);
+			} else {
+				console.log(" Число должно быть не менее 1 и не более 999!" + udh)
+			}
+		}
+
+		function numSeparation (num, obj) {
+			obj.units = num % 10;
+			obj.dozens = (Math.floor(num / 10)) % 10;
+			obj.hundreds = (Math.floor(num / 100)) % 10;
+		}
+
+		numToObj(number, udh);
+		
+		
+		// Задание 2
+		//Создал объекты товаров
+		let tShirt = {
+			name: 'T-shirt',
+			price: 300,
+			quantityBasket: 0,
+			priceBasket: 0
+		}
+
+		let jeans = {
+			name: 'Jeans',
+			price: 500,
+			quantityBasket: 0,
+			priceBasket: 0
+		}
+
+		let socks = {
+			name: 'Socks',
+			price: 100,
+			quantityBasket: 0,
+			priceBasket: 0
+		}
+
+		//Создал массивы каталога и корзины
+		let catalog = [];
+		let basket = [];
+
+		//Добавил все товары в каталог
+		catalog.push(socks, jeans, tShirt);
+
+		//Функция добавления товара в корзину
+		function addBasket (name, quantity) {
+			basket.push(name);
+			name.quantityBasket = name.quantityBasket + quantity;
+			name.priceBasket = name.priceBasket + name.quantityBasket * name.price;
+		}
+
+		//Добавим в корзину 2 футболки и 1 джинсы
+		addBasket (tShirt, 2);
+		addBasket (jeans, 1);
+
+		//Посчитаем стоимость товаров в корзине
+		function countBasket() {
+			let basketPrice = 0;
+			console.log('В корзине лежит:')
+			for (i = 0; i < basket.length; i++) {
+				console.log(basket[i].name + ' в количестве ' + basket[i].quantityBasket + ' шт.' + 'на сумму ' + basket[i].priceBasket + ' Рублей');
+				basketPrice = basketPrice + basket[i].priceBasket; 
+			}
+			console.log('Общая сумма заказа ' + basketPrice + ' Рублей')
+		}
+
+		countBasket();
+		
+
+
+
+	</script>
+</body>
+</html>

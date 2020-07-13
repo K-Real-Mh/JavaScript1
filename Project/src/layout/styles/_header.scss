@@ -1,0 +1,136 @@
+@import "_variables";
+.header {
+	&__header {
+		height: 100px;
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+	}
+	&__searchform {
+		display: flex;
+		align-items: center;
+		border-radius: 3px;
+		border: 1px solid $borderColor;
+		overflow: hidden;
+		height: 40px;
+		font-weight: 300;
+		.disabled:not(:first-child) {
+			margin-top: 1.5rem;
+		}
+		.dropdown-menu{
+			input {
+				border: 1px solid $borderColor;
+				display: none;
+				@media (max-width: 768px) {
+					display: inline;
+				}
+			}
+			button {
+				border: 1px solid $borderColor;
+				display: none;
+				@media (max-width: 768px) {
+					display: inline;
+				}
+			}
+		}
+	}
+	&__search-browse {
+		padding: 14px;
+		border-right: 1px solid $borderColor;
+		background-color: #f8f8f8;
+		font-size: $mainFontSize;
+		line-height: 40px;
+		color: $textColor;
+		font-weight: 400;
+		i{
+			&:first-child {
+				color: #838383;
+			}
+		}
+	}
+	&__search-input {
+		height: inherit;
+		border: none;
+		outline: none;
+		padding: 14px 16px;
+		@media (max-width: 992px) {
+			width: 150px;
+		}
+		@media (max-width: 768px) {
+			display: none;
+		}
+	}
+	&__search-buton {
+		color: #a4a4a4;
+		height: inherit;
+		border: none;
+		border-left: 1px solid $borderColor;
+		background: none;
+		padding: 12px;
+		@media (max-width: 768px) {
+			display: none;
+		}
+	}
+	&__cart {
+		margin-right: 24px;
+		margin-left: auto;
+	}
+	&__btn {
+		padding: 13px 19px;
+		background-color: $mainColor;
+		color: #ffffff;
+		font-size: 15px;
+		font-weight: 400;
+		border: none;
+	}
+	&__line {
+		border-bottom: 1px solid #ececec;
+	}
+	&__nav {
+		height: 50px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		a {
+			text-decoration: none;
+			color: $textColor;
+			font-size: $mainFontSize;
+			font-weight: 700;
+			text-transform: uppercase;
+			&:not(:last-child) {
+				margin-right: 45px;
+			}
+			&:hover {
+				color: $mainColor;
+			}
+		}
+		@media (max-width: 768px) {
+			display: none;
+		}
+	}
+	&__burger {
+		display: none;
+		@media (max-width: 768px) {
+			display: block;
+		}
+	}
+}
+
+
+
+.logo {
+	width: 165px;
+	background: url("../../assets/imgs/logo.png") no-repeat;
+	text-transform: uppercase;
+	font-size: 27px;
+	font-weight: 300;
+	padding-left: 72px;
+	line-height: 51px;
+	margin-right: 37px;
+	span {
+		color: $mainColor;
+		font-weight: 700;
+	}
+}
+
+
