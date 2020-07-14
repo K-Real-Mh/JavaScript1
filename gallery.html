@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="gallery.css">
+	<title>Document</title>
+	<style>
+		.hidden {
+			display: none
+		}
+	</style>
+</head>
+
+<body>
+	<div class="wrapper">
+		<div id="gallery">
+			<div class="gallery-main">
+				<button id="left" class="btn">
+					<<< </button>
+						<img src="https://cs8.pikabu.ru/post_img/big/2017/12/25/5/1514188160141511997.jpg" alt="1"
+							width="350px" height="280px" id="main-pic">
+						<button id="right" class="btn"> >>> </button>
+			</div>
+			<div class="roulette">
+			</div>
+		</div>
+	</div>
+	<script>
+		function createItem(id, img) {
+			return { id, img }
+		};
+
+		function initCatalog() {
+			let ids = [1, 2, 3, 4, 5];
+
+			let imgs = [
+				'https://cs8.pikabu.ru/post_img/big/2017/12/25/5/1514188160141511997.jpg', //el в forEach
+				'https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/HMUB2?wid=1144&hei=1144&fmt=jpeg&qlt=80&op_usm=0.5,0.5&.v=1563827752399',
+				'https://zeon18.ru/files/item/Xiaomi-Mi-Notebook-Air-4G-Officially-Announced-Weboo-co-2%20(1)_1.jpg',
+				'https://files.sandberg.it/products/images/lg/640-05_lg.jpg',
+				'https://images-na.ssl-images-amazon.com/images/I/81PLqxtrJ3L._SX466_.jpg'
+			]
+
+			return ids.map((ids, index) => createItem(ids, imgs[index]));
+		}
+
+
+
+
+
+		function initNewApp(settings) { //0
+			const element = { //3
+				items: settings.items,
+				container: settings.container,
+				template: settings.template,
+				init() {
+					this._render(); //5
+					this._handleEvents();
+				},
+				_render() {
+					let str = ''; //6
+					this.items.forEach(el => { //7
+						str += this.template(el); //7.1 ...
+					});
+					document.querySelector(this.container).innerHTML += str; //8
+				},
+				_handleEvents() {
+					let main = document.querySelector('#main-pic');
+					document.addEventListener('click', evt => {
+						if (evt.target.classList.contains('img-preview')) {
+							main.src = evt.target.src;
+							main.alt = evt.target.alt;
+						}
+
+						if (evt.target.id == 'hide') {
+							main.classList.toggle('hidden');
+						}
+
+						if (evt.target.id == 'left') {
+							switch (main.alt) {
+								case '1':
+									main.alt = '5';
+									main.src = 'https://images-na.ssl-images-amazon.com/images/I/81PLqxtrJ3L._SX466_.jpg';
+									break;
+								case '2':
+									main.alt = '1';
+									main.src = 'https://cs8.pikabu.ru/post_img/big/2017/12/25/5/1514188160141511997.jpg';
+									break;
+								case '3':
+									main.alt = '2';
+									main.src = 'https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/HMUB2?wid=1144&hei=1144&fmt=jpeg&qlt=80&op_usm=0.5,0.5&.v=1563827752399';
+									break;
+								case '4':
+									main.alt = '3';
+									main.src = 'https://zeon18.ru/files/item/Xiaomi-Mi-Notebook-Air-4G-Officially-Announced-Weboo-co-2%20(1)_1.jpg';
+									break;
+								case '5':
+									main.alt = '4';
+									main.src = 'https://files.sandberg.it/products/images/lg/640-05_lg.jpg';
+									break;
+							}
+						}
+
+						if (evt.target.id == 'right') {
+							switch (main.alt) {
+								case '4':
+									main.alt = '5';
+									main.src = 'https://images-na.ssl-images-amazon.com/images/I/81PLqxtrJ3L._SX466_.jpg';
+									break;
+								case '5':
+									main.alt = '1';
+									main.src = 'https://cs8.pikabu.ru/post_img/big/2017/12/25/5/1514188160141511997.jpg';
+									break;
+								case '1':
+									main.alt = '2';
+									main.src = 'https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/HMUB2?wid=1144&hei=1144&fmt=jpeg&qlt=80&op_usm=0.5,0.5&.v=1563827752399';
+									break;
+								case '2':
+									main.alt = '3';
+									main.src = 'https://zeon18.ru/files/item/Xiaomi-Mi-Notebook-Air-4G-Officially-Announced-Weboo-co-2%20(1)_1.jpg';
+									break;
+								case '3':
+									main.alt = '4';
+									main.src = 'https://files.sandberg.it/products/images/lg/640-05_lg.jpg';
+									break;
+							}
+						}
+					})
+				}
+
+			}
+			element.init(); //4
+
+			return element
+		}
+
+		let carousele = { //1
+			items: initCatalog(),
+			container: '.roulette',
+			template(el) {
+				return `<img  alt=${el.id} src="${el.img}" width="100" height="80" class="img-preview">`
+			}
+		};
+
+		let newGallery = initNewApp(carousele); //2
+
+        // document.querySelector('#hide').addEventListener('click', evt => {}) 
+        // function createGallery() {
+        //     setTimeout(() => {
+        //         newGallery =  initNewApp(carousele);
+        //         console.log('ok')
+        //     }, 500)
+
+        // }
+
+        // function func(e) {
+        //     e.preventDefault();
+        //     console.log(e)
+        //     newGallery = createGallery();
+        // }
+
+        // document.getElementById('create').onclick = func //не пробрасываю эвент, т.к. он приходит туда сам
+        // document.getElementById('create').onclick = evt => {
+        //     evt.preventDefault();
+        //     console.log('Другая')
+        // } //не пробрасываю эвент, т.к. он приходит туда сам
+
+
+        // document.getElementById('create').addEventListener('click', func);
+        // document.getElementById('create').addEventListener('click', evt => {
+        //     console.log('Another')
+        // });
+	</script>
+
+</body>
+
+</html>
