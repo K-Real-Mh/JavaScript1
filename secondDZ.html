@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+
+<body>
+	<script>
+		//1 Задание
+		var a = 1, b = 1, c, d;
+		c = ++a; console.log(c);           // 2 префиксная форма возвращает новое значение
+		d = b++; console.log(d);           // 1 постфиксная форма возвращает старое значение
+		c = (2 + ++a); console.log(c);      // 5 судя по всему а остался равен 2, поэтому 2+2+1=5
+		d = (2 + b++); console.log(d);      // 4 тоже самое
+		console.log(a);                    // 3 
+		console.log(b); 						// 3
+		
+		//2 задание
+		var a = 2;
+		var x = 1 + (a *= 2);
+		console.log(x); // Ответ 5
+
+		//3 задание
+		var a = 3;
+		var b = -5;
+		if (a >= 0 && b >= 0) {
+			console.log(a - b);
+		} else if (a < 0 && b < 0) {
+			console.log(a * b);
+		} else {
+			console.log(a + b);
+		}
+
+		//4 задание
+		var a = Math.floor(Math.random() * 16);
+		switch (a) {
+			case 0:
+			console.log(a,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15);
+			break;
+			case 1:
+			console.log(a,2,3,4,5,6,7,8,9,10,11,12,13,14,15);
+			break;
+			case 2:
+			console.log(a,3,4,5,6,7,8,9,10,11,12,13,14,15);
+			break;
+			case 3:
+			console.log(a,4,5,6,7,8,9,10,11,12,13,14,15);
+			break;
+			case 4:
+			console.log(a,5,6,7,8,9,10,11,12,13,14,15);
+			break;
+			case 5:
+			console.log(a,6,7,8,9,10,11,12,13,14,15);
+			break;
+			case 6:
+			console.log(a,7,8,9,10,11,12,13,14,15);
+			break;
+			case 7:
+			console.log(a,8,9,10,11,12,13,14,15);
+			break;
+			case 8:
+			console.log(a,9,10,11,12,13,14,15);
+			break;
+			case 9:
+			console.log(a,10,11,12,13,14,15);
+			break;
+			case 10:
+			console.log(a,11,12,13,14,15);
+			break;
+			case 11:
+			console.log(a,12,13,14,15);
+			break;
+			case 12:
+			console.log(a,13,14,15);
+			break;
+			case 13:
+			console.log(a,14,15);
+			break;
+			case 14:
+			console.log(a,15);
+			break;
+			default:
+			console.log(a);
+			break;
+		}
+
+		//5 задание
+		function sum(a,b) {
+			return a + b;
+		}
+
+		function diff(a,b) {
+			return a - b;
+		}
+
+		function prod(a,b) {
+			return a * b;
+		}
+
+		function div(a,b) {
+			return a / b;
+		}
+
+		//6 задание
+		function mathOperation(arg1, arg2, operation) {
+			switch (operation) {
+				case 'сумма':
+				return sum(arg1, arg2);
+				break;
+				case 'разница':
+				return diff(arg1, arg2);
+				break;
+				case 'произведение':
+				return prod(arg1, arg2);
+				break;
+				case 'деление':
+				return div(arg1, arg2);
+				break;
+				default: 
+				return 'Что-то пошло не так, проверьте данные';
+				break;
+			}
+		}
+
+		console.log (mathOperation(2, 3, 'сумма'));
+		console.log (mathOperation(2, 3, 'разница'));
+		console.log (mathOperation(2, 3, 'произведение'));
+		console.log (mathOperation(2, 3, 'деление'));
+		console.log (mathOperation(2, 3, 'сделай что-то'));
+
+		//7 задание
+		console.log (null == 0); //Значения null и undefined равны друг другу, но не чему бы то ни было еще.
+		
+		//8 задание
+		function power(val, pow){
+			if (pow > 1) {
+				return val * power(val, pow - 1);
+			}
+			else {
+				return val
+			}
+		}
+		console.log(power(2, 3));
+
+
+	</script>
+</body>
+
+</html>
