@@ -1,0 +1,148 @@
+@import "_variables";
+
+.container-fluid {
+	padding: 0px;
+	&--grey {
+		height: 777px;
+		background-color: #f7f7f7;
+		@media (max-width: 992px) {
+			height: 500px;
+		}
+		@media (max-width: 768px) {
+			height: 390px;
+		}
+	}
+}
+
+.carousel-control-prev {
+	justify-content: start;
+	&-icon {
+		width: 47px;
+		height: 47px;
+		background-color: #2a2a2a;
+		font-size: 24px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		background-image: none;
+	}
+}
+
+.carousel-control-next {
+	justify-content: flex-end;
+	&-icon {
+		width: 47px;
+		height: 47px;
+		background-color: #2a2a2a;
+		font-size: 24px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		background-image: none;
+	}
+}
+
+.product-description-wrapper {
+	height: 763px;
+	display: flex;
+	justify-content: center;
+	@media (max-width: 992px) {
+		height: 600px;
+	}
+	@media (max-width: 768px) {
+
+	}
+}
+
+.product-description {
+	height: 44rem;
+	border: 1px solid #eaeaea;
+	margin-top: -60px;
+	background-color: #ffffff;
+	position: absolute;
+	&__head {
+		margin-top: 4.5rem;
+		border-bottom: 1px solid #eaeaea;
+		padding-bottom: 2.6rem;
+		h2 {
+			color: #4d4d4d;
+			font-size: 18px;
+			font-weight: 700;
+		}
+		p {
+			margin-top: 4rem;
+			margin-bottom: 1.75rem;
+			color: #5e5e5e;
+			font-size: 14px;
+			font-weight: 300;
+		}
+	}
+	&__text {
+		color: $textColor;
+		font-size: 14px;
+		font-weight: 700;
+		span {
+			color: #b9b9b9;
+		}
+		&--pink {
+			color: $mainColor;
+			border-bottom: 1px solid #eaeaea;
+			padding-bottom: 1rem;
+			max-width: 11rem;
+			position: relative;
+			&:before {
+				content: "";
+				position: absolute;
+				top: 100%;
+				overflow: auto;
+				margin: auto;
+				right: 0;
+				left: 0;
+				border-bottom: 3px solid $mainColor;
+				width: 4rem;
+			}
+		}
+	}
+	&__price {
+		color: $mainColor;
+		font-size: 24px;
+		font-weight: 700;
+		margin-top: 2rem;
+		}
+	&__form {
+		margin-top: 4rem;
+		.product-description__text {
+			width: 9rem;
+		}
+		.form-row {
+			margin-top: 1rem;
+			.form-control {
+				border-radius: 0px;
+				width: 9rem;
+			}
+		}
+		button {
+			color: $mainColor;
+			border-color: $mainColor;
+			border-radius: 0px;
+			margin-top: 1.75rem;
+			img {
+				margin-right: 1rem;
+			}
+			&:hover{
+				background-color: $mainColor;
+				border-color: $mainColor;
+			}
+		}
+	}
+}
+
+.aside-products {
+	.products__wrap-img {
+		background-color: #e9e9e9;
+		.products__img {
+			width: inherit;
+			margin: 0px;
+		}
+	}
+}
