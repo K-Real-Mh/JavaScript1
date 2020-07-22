@@ -1,0 +1,252 @@
+@import "_variables";
+
+.new-arrivals-wrapper {
+	height: 148px;
+	background-color: #f8f3f4;
+}
+.new-arrivals {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	height: inherit;
+	h1 {
+		color: $mainColor;
+		font-size: 24px;
+		font-weight: 700;
+		text-transform: uppercase;
+	}
+	&__a {
+		color: #636363;
+		text-decoration: none;
+		font-size: $mainFontSize;
+		font-weight: 700;
+		text-transform: uppercase;
+		&:hover {
+			color: $mainColor;
+		}
+	}
+	&__a-active {
+		color: $mainColor;
+	}
+}
+
+
+
+.cart {
+	margin-top: 90px;
+	&__block {
+		display: flex;
+		justify-content: space-between;
+		padding-bottom: 20px;
+		border-bottom: 1px solid #eaeaea;
+		margin-top: 22px;
+		color: #656565;
+		font-size: 13px;
+		font-weight: 400;
+		& > div:not(:first-child) {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+	}
+	&__header-text {
+		color: $textColor;
+		font-size: 13px;
+		font-weight: 700;
+		text-transform: uppercase;
+		@media (max-width: 768px) {
+			font-size: 12px;
+		}
+	}
+	&__product-details {
+		width: 450px;
+		display: flex;
+		@media (max-width: 992px) {
+			width: 300px;
+		}
+		@media (max-width: 768px) {
+			width: 150px;
+		}
+		& img {
+			margin-right: 21px;
+			@media (max-width: 768px) {
+				margin-right: 4px;
+				height: 100px;
+			}
+		}
+	}
+	&__unite-price {
+		width: 80px;
+	}
+	&__quantity {
+		width: 70px;
+		input {
+			text-align: center;
+			width: 54px;
+			height: 30px;
+			border: 1px solid #eaeaea;
+			background-color: #ffffff;
+		}
+	}
+	&__shipping {
+		width: 65px;
+	}
+	&__subtotal {
+		width: 70px;
+	}
+	&__action {
+		width: 50px;
+	}
+	&__product {
+		@media (max-width: 768px) {
+			padding: 0px;
+		}
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		padding-top: 13px;
+		padding-bottom: 22px;
+	}
+	span {
+			color: #575757;
+			font-weight: 700;
+	}
+	&__color {
+		margin-top: auto;
+		color: #6f6e6e;
+		font-size: 13px;
+		font-weight: 300;
+	}
+	&__size {
+		margin-top: 6px;
+		color: #6f6e6e;
+		font-size: 13px;
+		font-weight: 300;
+	}
+}
+
+
+
+.cart-buttons {
+	margin-top: 44px;
+	display: flex;
+	justify-content: space-between;
+	button {
+		padding: 20px 39px;
+		color: #4a4a4a;
+		font-size: $mainFontSize;
+		font-weight: 700;
+		text-transform: uppercase;
+		border: 1px solid #eaeaea;
+		background-color: #ffffff;
+	}
+}
+
+.cart-form {
+	margin-top: 63px;
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-start;
+	@media (max-width: 768px) {
+		display: block;
+	}
+	&__column {
+		width: 355px;
+		@media (max-width: 1200px) {
+			width: 250px;
+		}
+		@media (max-width: 992px) {
+			width: 200px;
+		}
+		@media (max-width: 768px) {
+			width: auto;
+			&:nth-child(n+2) {
+				margin-top: 20px;
+			}
+		}
+		h2 {
+			color: $textColor;
+			font-size: 16px;
+			font-weight: 700;
+			text-transform: uppercase;
+			margin-bottom: 22px;
+		}
+		input,select {
+		font-family: inherit;
+		width: 100%;
+		color: #b1b1b1;
+		font-size: 13px;
+		font-weight: 300;
+		height: 45px;
+		border: 1px solid #eaeaea;
+		background-color: #ffffff;
+		margin-bottom: 20px;
+		padding: 13px;
+		}
+		button {
+		border: 1px solid #eaeaea;
+		background-color: #ffffff;
+		padding: 12px 14px;
+		color: #4a4a4a;
+		font-size: 11px;
+		font-weight: 900;
+		text-transform: uppercase;
+		}
+		p {
+			color: #000000;
+			font-size: $mainFontSize;
+			font-weight: 300;
+			margin-bottom: 24px;
+		}
+	}
+	&__total {
+		width: 360px;
+		padding: 40px;
+		background-color: #f5f3f3;
+		box-sizing: border-box;
+		@media (max-width: 992px) {
+			width: 250px;
+		}
+		@media (max-width: 768px) {
+			width: auto;
+			margin-top: 20px;
+		}
+		button {
+			width: 100%;
+			background-color: $mainColor;
+			padding: 20px 40px;
+			color: #ffffff;
+			font-size: 16px;
+			font-weight: 700;
+			text-transform: uppercase;
+		}
+	}
+	&__sub {
+		text-align: right;
+		color: #4a4a4a;
+		font-size: 11px;
+		font-weight: 400;
+		text-transform: uppercase;
+		margin-bottom: 14px;
+		span:last-child {
+			margin-left: 15px;
+		}
+	}
+	&__grand {
+		text-align: right;
+		color: $textColor;
+		font-size: 16px;
+		font-weight: 700;
+		text-transform: uppercase;
+		padding-bottom: 22px;
+		margin-bottom: 17px;
+		border-bottom: 1px solid #e2e2e2;
+		span:last-child {
+			margin-left: 19px;
+			color: $mainColor;
+		}
+	}
+}
+
+
+
