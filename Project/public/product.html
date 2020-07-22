@@ -10,7 +10,6 @@
 	<link rel="stylesheet" href="../src/layout/styles/style.css">
 	<title>Product</title>
 </head>
-
 <body>
 	<div class="wrapper">
 		<header class="header">
@@ -49,9 +48,36 @@
 					</form>
 				</div>
 				<div class="header__cart">
-					<a href="cart.html" class="header__cart-a"><img class="header__cart-img" src="../src/assets/imgs/headerCart.png"
-							alt="headerCart"></a>
+					<a href="#" class="header__cart-a"><img id="hide" class="header__cart-img"
+							src="../src/assets/imgs/headerCart.png" alt="headerCart"></a>
+					<div class="headerCart" id="cart">
+						<div id="basket" class="headerCart__main">
+							<div class="headerCart__item">
+								<div class="headerCart__product">
+									<img src="../src/assets/imgs/product1.jpg" alt="">
+									<div class="headerCart__description">
+										<div class="headerCart__name">
+											Rebox Zane
+										</div>
+										<div class="headerCart__price">
+											1 <span>x</span> $250
+										</div>
+									</div>
+								</div>
+								<button name="remove" data-id="${item.id}"><i class="fas fa-times-circle"></i></button>
+							</div>
+						</div>
+						<div class="headerCart__totalPrice">
+							<div>total</div>
+							<div>
+								$<div id="sum">500.00</div>
+							</div>
+						</div>
+						<button class="headerCart__button"><a href="checkout.html">Checkout</a></button>
+						<button class="headerCart__button"><a href="cart.html">Go to cart</a></button>
+					</div>
 				</div>
+
 				<div class="header__account">
 					<button class="header__btn">My Account <i class="fas fa-caret-down"></i></button>
 				</div>
@@ -66,7 +92,8 @@
 						</button>
 						<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
 							<div class="navbar-nav">
-								<a class="nav-item nav-link active" href="index.html">Home<span class="sr-only">(current)</span></a>
+								<a class="nav-item nav-link active" href="index.html">Home<span
+										class="sr-only">(current)</span></a>
 								<a class="nav-item nav-link" href="#">Man</a>
 								<a class="nav-item nav-link" href="#">Women</a>
 								<a class="nav-item nav-link" href="#">Kids</a>
@@ -232,31 +259,38 @@
 										</h3>
 										<form class="product-head__form row">
 											<div class="form-check form-check-inline product-head__particle col-3">
-												<input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+												<input class="form-check-input" type="checkbox" id="inlineCheckbox1"
+													value="option1">
 												<label class="form-check-label product-head__text" for="inlineCheckbox1">XXS</label>
 											</div>
 											<div class="form-check form-check-inline product-head__particle col-3">
-												<input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+												<input class="form-check-input" type="checkbox" id="inlineCheckbox2"
+													value="option2">
 												<label class="form-check-label product-head__text" for="inlineCheckbox2">XS</label>
 											</div>
 											<div class="form-check form-check-inline product-head__particle col-3">
-												<input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3">
+												<input class="form-check-input" type="checkbox" id="inlineCheckbox3"
+													value="option3">
 												<label class="form-check-label product-head__text" for="inlineCheckbox3">S</label>
 											</div>
 											<div class="form-check form-check-inline product-head__particle col-3">
-												<input class="form-check-input" type="checkbox" id="inlineCheckbox4" value="option4">
+												<input class="form-check-input" type="checkbox" id="inlineCheckbox4"
+													value="option4">
 												<label class="form-check-label product-head__text" for="inlineCheckbox4">M</label>
 											</div>
 											<div class="form-check form-check-inline product-head__particle col-3">
-												<input class="form-check-input" type="checkbox" id="inlineCheckbox5" value="option5">
+												<input class="form-check-input" type="checkbox" id="inlineCheckbox5"
+													value="option5">
 												<label class="form-check-label product-head__text" for="inlineCheckbox5">L</label>
 											</div>
 											<div class="form-check form-check-inline product-head__particle col-3">
-												<input class="form-check-input" type="checkbox" id="inlineCheckbox6" value="option6">
+												<input class="form-check-input" type="checkbox" id="inlineCheckbox6"
+													value="option6">
 												<label class="form-check-label product-head__text" for="inlineCheckbox6">XL</label>
 											</div>
 											<div class="form-check form-check-inline product-head__particle col-3">
-												<input class="form-check-input" type="checkbox" id="inlineCheckbox7" value="option7">
+												<input class="form-check-input" type="checkbox" id="inlineCheckbox7"
+													value="option7">
 												<label class="form-check-label product-head__text" for="inlineCheckbox7">XXL</label>
 											</div>
 										</form>
@@ -566,6 +600,7 @@
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
 		integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
 		crossorigin="anonymous"></script>
+	<script src="../src/components/js/basket.js"></script>
 	<script src="../src/components/js/product.js"></script>
 </body>
 

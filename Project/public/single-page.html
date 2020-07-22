@@ -49,8 +49,34 @@
 					</form>
 				</div>
 				<div class="header__cart">
-					<a href="cart.html" class="header__cart-a"><img class="header__cart-img" src="../src/assets/imgs/headerCart.png"
-							alt="headerCart"></a>
+					<a href="#" class="header__cart-a"><img id="hide" class="header__cart-img"
+							src="../src/assets/imgs/headerCart.png" alt="headerCart"></a>
+					<div class="headerCart" id="cart">
+						<div id="basket" class="headerCart__main">
+							<div class="headerCart__item">
+								<div class="headerCart__product">
+									<img src="../src/assets/imgs/product1.jpg" alt="">
+									<div class="headerCart__description">
+										<div class="headerCart__name">
+											Rebox Zane
+										</div>
+										<div class="headerCart__price">
+											1 <span>x</span> $250
+										</div>
+									</div>
+								</div>
+								<button name="remove" data-id="${item.id}"><i class="fas fa-times-circle"></i></button>
+							</div>
+						</div>
+						<div class="headerCart__totalPrice">
+							<div>total</div>
+							<div>
+								$<div id="sum">500.00</div>
+							</div>
+						</div>
+						<button class="headerCart__button"><a href="checkout.html">Checkout</a></button>
+						<button class="headerCart__button"><a href="cart.html">Go to cart</a></button>
+					</div>
 				</div>
 				<div class="header__account">
 					<button class="header__btn">My Account <i class="fas fa-caret-down"></i></button>
@@ -78,7 +104,7 @@
 					</div>
 				</nav>
 				<nav class="header__nav">
-					<a href="#">Home</a>
+					<a href="index.html">Home</a>
 					<a href="#">Man</a>
 					<a href="#">Women</a>
 					<a href="#">Kids</a>
@@ -189,20 +215,26 @@
 				<div class="head-text text-center text-uppercase">
 					<h2>you may like also</h2>
 				</div>
-				<div class="products row">
+				<div id="catalog" class="products row">
 					<div class="products__item col-sm-6 col-lg-3">
 						<div class="products__wrap-img">
 							<div class="products__buy">
-								<button>
+								<button
+									name="add"
+									data-name="${item.name}"
+									data-img="${item.img}"
+									data-price="${item.price}"
+									data-id="${item.id}"
+								>
 									<img src="../src/assets/imgs/addToCart.png" alt="">
 									Add to Cart
 								</button>
 							</div>
-							<img class="products__img mx-auto" src="../src/assets/imgs/blaze-leggins.png" alt="product1">
+							<img class="products__img mx-auto" src="${item.img}" alt="product1">
 						</div>
 						<div class="products__bottom">
-							<div class="products__name">BLAZE LEGGINGS</div>
-							<div class="products__price">$52.00</div>
+							<div class="products__name">${item.name}</div>
+							<div class="products__price">${item.price}</div>
 						</div>
 					</div>
 					<div class="products__item col-sm-6 col-lg-3">
@@ -352,6 +384,8 @@
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
 		integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
 		crossorigin="anonymous"></script>
+	<script src="../src/components/js/basket.js"></script>
+	<script src="../src/components/js/single-page.js"></script>
 </body>
 
 </html>

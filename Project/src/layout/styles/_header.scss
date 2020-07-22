@@ -17,7 +17,7 @@
 		.disabled:not(:first-child) {
 			margin-top: 1.5rem;
 		}
-		.dropdown-menu{
+		.dropdown-menu {
 			input {
 				border: 1px solid $borderColor;
 				display: none;
@@ -42,7 +42,7 @@
 		line-height: 40px;
 		color: $textColor;
 		font-weight: 400;
-		i{
+		i {
 			&:first-child {
 				color: #838383;
 			}
@@ -74,6 +74,7 @@
 	&__cart {
 		margin-right: 24px;
 		margin-left: auto;
+		position: relative;
 	}
 	&__btn {
 		padding: 13px 19px;
@@ -116,8 +117,6 @@
 	}
 }
 
-
-
 .logo {
 	width: 165px;
 	background: url("../../assets/imgs/logo.png") no-repeat;
@@ -133,4 +132,98 @@
 	}
 }
 
+.hidden {
+	display: block !important;
+}
 
+.headerCart {
+	position: absolute;
+	border-radius: 5px;
+	border: 1px solid #eaeaea;
+	background-color: #ffffff;
+	padding: 20px 17px;
+	z-index: 3;
+	width: 268px;
+	display: none;
+	&__item {
+		display: flex;
+		justify-content: space-between;
+		padding-bottom: 16px;
+		border-bottom: 1px solid #ededed;
+		align-items: center;
+		button {
+			margin-left: 55px;
+			font-size: 16px;
+			font-weight: 400;
+			text-transform: uppercase;
+			width: 15px;
+			height: 15px;
+			color: #c0c0c0;
+			border-radius: 50%;
+		}
+	}
+	&__product {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		img {
+			width: 72px;
+			height: 85px;
+		}
+	}
+	&__description {
+		margin-left: 14px;
+		width: 75px;
+	}
+	&__name {
+		color: #222222;
+		font-size: 12px;
+		font-weight: 700;
+		text-transform: uppercase;
+	}
+	&__price {
+		color: $mainColor;
+		font-size: 12px;
+		font-weight: 400;
+		text-transform: uppercase;
+		margin-top: 15px;
+		span {
+			font-size: 10px;
+			margin: 0px 4px;
+		}
+	}
+	&__totalPrice {
+		display: flex;
+		justify-content: space-between;
+		color: #222222;
+		font-size: 16px;
+		font-weight: 700;
+		text-transform: uppercase;
+		margin-top: 19px;
+		div:last-child {
+			display: flex;
+		}
+	}
+	&__button {
+		margin-top: 32px;
+		width: 100%;
+		padding: 19px;
+		color: $mainColor;
+		font-size: 14px;
+		font-weight: 700;
+		text-transform: uppercase;
+		border: 1px solid #f16d7f;
+		background-color: #ffffff;
+		a {
+			color: $mainColor !important;
+		}
+		&:last-child {
+			border: 1px solid #eaeaea;
+			color: #4a4a4a;
+			margin-top: 11px;
+			a {
+				color: #4a4a4a !important;
+			}
+		}
+	}
+}
